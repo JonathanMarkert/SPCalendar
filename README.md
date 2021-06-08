@@ -15,3 +15,7 @@ antal todos på en viss dag. - (G)
 10. Användaren skall kunna växa till andra månader i kalendervyn - (VG)
 11. Svenska helgdagar visas i kalendern - (VG)
 12. Filtrera todolistan utifrån vald dag i kalendern, det ska gå avmarkera vald dag (VG)
+
+
+Miro-länk
+https://miro.com/welcomeonboard/N1Y2eWVBQTZQRHVIYVlkb3BWTGJycDNFOE9CMGdRcGFMVFd0ejhlc3p3WUhmRXBITDZ2QkNpUWlXMVFNN1cyMnwzMDc0NDU3MzUzNzAwNTAwMzc4
