@@ -17,7 +17,11 @@ antal todos på en viss dag. - (G)
 12. Filtrera todolistan utifrån vald dag i kalendern, det ska gå avmarkera vald dag (VG)
 
 
-Miro-länk
+## Miro-länk
 https://miro.com/welcomeonboard/N1Y2eWVBQTZQRHVIYVlkb3BWTGJycDNFOE9CMGdRcGFMVFd0ejhlc3p3WUhmRXBITDZ2QkNpUWlXMVFNN1cyMnwzMDc0NDU3MzUzNzAwNTAwMzc4
 
-Hallå eller!?!
+## Font Awesome länkar:
+<i class="fas fa-plus"></i>  plus-tecken
+<i class="fas fa-calendar"></i> Kalender image
+<i class="fas fa-trash-alt"></i> trash-can icon
+<i class="fas fa-edit"></i> Edit icon 

@@ -1,0 +1,38 @@
+.sidebar {
+
+    background-color: var(--color-background-black);
+    color: var(--color-text-grey);    
+    min-width:320px;
+    height: calc(100vh - (var(--header-height)- 6rem));
+    
+    
+}
+
+.today-info {
+    border-top: 3px solid var(--color-background-grey);
+    border-bottom: 3px solid var(--color-background-grey);
+    border-right: 3px solid var(--color-background-grey);
+    
+}
+
+.accordion-wrapper {
+    height: 80%;
+}
+
+.plus-sign{
+    color: var(--color-green);
+}
+
+.grey-invader{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+
+}
+
+footer {
+    background: pink;
+    height: 3rem;
+    
+}
+

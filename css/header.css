@@ -1,0 +1,18 @@
+header {
+    background-color: var(--color-background-black);
+    color: var(--color-text-grey);
+    width: 100%;
+    height: var(--header-height);
+}
+
+.arrow {
+    font-size: 2rem;
+}
+
+
+
+@media (max-width: 1537px) {
+    h1 {
+        font-size: 2rem;
+    }
+}

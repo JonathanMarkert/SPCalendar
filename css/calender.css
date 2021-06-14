@@ -1,0 +1,50 @@
+.calendar {
+    height: 100%;    
+    justify-content: normal;
+}
+
+.calendar button {
+    border-color: var(--color-background-grey);
+    height: calc(20vh - (var(--header-height)/ 5));
+}
+
+.calendar button:hover{
+    background-color: var(--color-green);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    
+}
+
+
+.calendar-grid.june button:first-child {
+    grid-column: 1;
+}
+
+
+.calendar-week {
+    background-color: var(--color-background-black);
+}
+
+.calendar-day{
+    background-color: var(--color-background-black);
+
+}
+
+.calendar-weekday{
+    background-color:var(--color-background-black);
+    color: var(--color-purple);
+}
+
+
+.calendar-weekend {
+    background-color:var(--color-background-black);
+    color: var(--color-orange);
+}
+
+.inactive {
+    background-color: var(--color-background-grey);
+    color: var(--color-text-grey); 
+}
