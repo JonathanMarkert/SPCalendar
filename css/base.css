@@ -1,31 +1,29 @@
-@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
-
+/* @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 :root {
-  --color-green: #009e47;
-  --color-orange: #df4d00;
-  --color-purple: #9300da;
-  --color-text-grey: #d6d8da;
-  --color-background-grey: #9da5b4;
-  --color-background-black: #0D1117;
-  --header-height: 7rem;
+    --color-green: #009e47;
+    --color-orange: #df4d00;
+    --color-purple: #9300da;
+    --color-text-grey: #d6d8da;
+    --color-background-grey: #9da5b4;
+    --color-background-black: #0d1117;
+    --header-height: 7rem;
 }
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
 body {
-  font-family: "Press Start 2P";
-  
+    font-family: "Press Start 2P";
 }
 
 body,
 html {
-  height: 100vh;
-  width: 100vw;
+    height: 100vh;
+    width: 100vw;
 }
 
 img {
@@ -34,32 +32,58 @@ img {
 
 main {
     display: flex;
-    width: 100%;     
-}
+    /* width: 100%;      */
+/* }
+
+.hide-for-mobile {
+    display: none;
+} */
 
 /* ==================  RESPONSIVENESS ========================= */
 
-/*==== MOBILLÄGE===== */
-
-.mobile-only {
-    display: none;
-}
-
-@media screen and (max-width: 39.975em) {
-  
+/* @media (max-width: 1537px) {
     
-    .sidebar {
-        width:100%;
+    body {
+        font-size: 80%;
     }
+} */
 
-    .desktop-only {
-        display:none !important;
+/* DESKTOPLÄGE */
+/* @media (min-width: 1537px) {
+    .hide-for-desktop {
+        display: none;
     }
-    
-    .mobile-only {
+} */
+
+/* LAPTOPLÄGE */
+/* 
+@media (min-width: 1078px) {
+    .hide-for-iPad {
+        display: none;
+    } */
+
+    /* .show-for-iPad {
+        display: inline-block;
+    } */
+
+    /* .hide-for-desktop {
         display: inline-block;
     }
-    
-}
-  
- 
+} */
+
+/*==== IPADLÄGE===== */
+
+/* @media screen and (min-width: 768px) { */
+    /* .hide-for-mobile {
+        display:none;
+    } */
+
+    /* .show-for-mobile {
+        display: inline-block;
+    } */
+
+    /* .hide-for-desktop {
+        display: inline-block;
+    }
+     */
+/* } */ 

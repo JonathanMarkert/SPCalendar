@@ -1,4 +1,4 @@
-.calendar {
+/* .calendar {
     height: 100%;    
     justify-content: normal;
 }
@@ -15,7 +15,6 @@
 .calendar-grid {
     display: grid;
     grid-template-columns: repeat(7,1fr);
-    
 }
 
 
@@ -47,4 +46,4 @@
 .inactive {
     background-color: var(--color-background-grey);
     color: var(--color-text-grey); 
-}
+} */

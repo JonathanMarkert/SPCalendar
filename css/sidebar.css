@@ -1,11 +1,7 @@
-.sidebar {
-
+/* .sidebar {
     background-color: var(--color-background-black);
     color: var(--color-text-grey);    
-    min-width:320px;
-    height: calc(100vh - (var(--header-height)- 6rem));
-    
-    
+    height: calc(100vh - (var(--header-height)- 6rem));   
 }
 
 .today-info {
@@ -27,12 +23,14 @@
     display: flex;
     align-items: center;
     justify-content: center; 
+}
 
+.grey-invader > img {
+    width: 70%;
 }
 
 footer {
     background: pink;
     height: 3rem;
     
-}
-
+} */
