@@ -13,7 +13,7 @@
 }
 
 :root{
-    --header-height: 8rem;
+    --header-height: 4rem;
 }
 
 body,
@@ -29,11 +29,7 @@ main {
     background-color: palegreen;
 }
 
-/* header.css */
-header {
-    background-color: palevioletred;
-    height: var(--header-height);
-}
+
 
 
 /* sidebar.css */
