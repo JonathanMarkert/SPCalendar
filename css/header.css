@@ -27,17 +27,24 @@
     }
 } */
 
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+body {
+    font-family: "Press Start 2P";
+}
 
 header {
     background-color: palevioletred;
     height: var(--header-height);
-    
+}
+
+header h1 {
+    font-size: 1rem;
+    margin: 0;
 }
 
 .grey-invader{
     background-color: darkgoldenrod;
-    height: 100%;
-    
 }
 
 .grey-invader > img {
@@ -51,7 +58,6 @@ header {
 
 .gop-invaders {
     background-color: black;
-    height: 100%;
 }
 
 .gop-invaders > img {
@@ -60,7 +66,6 @@ header {
 
 .date-time-info {
     background-color: cadetblue;
-    height: 100%;
 }
 
 .month-div {
@@ -73,13 +78,15 @@ header {
     height: 2rem;
 }
 
-
-
 @media (min-width: 768px) {
     header {
         height: calc(var(--header-height) * 1.5);
-        
     }
+
+    header h1 {
+        font-size: 2rem;
+    }
+    
     .grey-invader{
         height: 100%;
     }
