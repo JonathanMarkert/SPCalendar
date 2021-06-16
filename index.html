@@ -12,19 +12,19 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="./css/base.css">
-        <link rel="stylesheet" href="./css/header.css">
         <link rel="stylesheet" href="./css/modals.css">
-        <link rel="stylesheet" href="./css/sidebar.css"> -->
-        <link rel="stylesheet" href="./css/calender.css">
+        <link rel="stylesheet" href="./css/header.css"> -->
+    <link rel="stylesheet" href="./css/sidebar.css">
+    <link rel="stylesheet" href="./css/calender.css">
     <link rel="stylesheet" href="./css/temp.css">
     <script src="https://kit.fontawesome.com/bfedc06eab.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <!-- HEADER -->
-    <header class="" >
+    <header class="">
         <!-- hidden logo in desktop -->
-        <div class="col-2" style="background-color: red;"> 
+        <div class="col-2" style="background-color: red;">
             <!-- <img style="width: 100%;" src="./img/space-invaders.png" alt=""> -->
         </div>
         <!-- hidden logos in mobile -->
@@ -53,12 +53,41 @@
 
     <main class="d-flex">
         <!-- ASIDE NAV -->
-        <aside class="sidebar1 col-12 col-md-3">
-            
+        <aside class="sidebar col-12 col-md-3">
+            <div class="d-flex today-info">
+                <!-- <div><i class="fas fa-calendar"></i> </div> -->
+                <div class = "col-md-4 d-none d-md-flex align-items-center grey-invader">
+                   <img src="./img/space-invaders.png" alt="">
+                </div>
+                <!-- TODO: lägg till en klass för styling av datumet -->
+                <div class="col-12 d-flex flex-column align-items-center justify-content-center col-md-8" style="background-color: chocolate;">
+                    <p class="mb-1">Onsdag</p>
+                    <p class="mb-1">10 Juni</p>
+                    <p class="mb-1">13:00</p>
+                </div>
+            </div>
+            <div class="todo-list">todo-accordion DFlehfyiWEUYWE Vwefwu
+                YEVYwefvDFlehfy iWEUYWEVwefwuYE VYwefvDFlehfyiW
+                EUYWEVwefwuY EVYwefvDFlehf
+                yiWEUYWEVw efwuYEVYwefvD
+                FlehfyiWEUYWEVw efwuYEVYwef
+                vDFlehf yiWEUYWEV wefwuYEVYwe fvDFlehfyiW
+                EUYWEVwe fwuYEVYwef vDFlehfyiWE UYWEVwefw uYEVYwef
+                vDFlehfyiWE UYWEVwefwuYE VYwefvDFle hfyiWEUYW EVwefwuYEV
+                YwefvDF lehfyiWEUYWEVwe fwuYEVYwefv DFlehfyiWEUYWEVwefwuYEVYwefv</div>
+
+            <div class="d-md-none d-flex align-items-center justify-content-center sort-on-date-button">
+                <p>filter on date</p>
+            </div>
+            <div class="col-12 col-md-3 d-flex align-items-center justify-content-center test">
+                <i class="fas fa-plus fa-2x create-todo-button"></i>
+            </div>
+
+
             <!-- Välkommsinfo -->
             <!-- <div class="today-info row" > -->
-                <!-- invader ska inte visas i mobil läge. visas i pada -->
-                <!-- <div class="col-md-4 grey-invader hide-for-mobile" style="background-color: red;"> 
+            <!-- invader ska inte visas i mobil läge. visas i pada -->
+            <!-- <div class="col-md-4 grey-invader hide-for-mobile" style="background-color: red;"> 
                     <img src="./img/space-invaders.png" alt="">
                 </div>
                 <div class= "col-sm-12 col-md-8 " style="background-color: blue;">
@@ -76,7 +105,7 @@
         <!-- Main Calendar -->
         <div class="calendar d-none d-md-block col-md-9 ">
             <!-- hide whole section in mobile version -->
-             <div class="calendar-grid june">
+            <div class="calendar-grid june">
                 <button class="calendar-day may calendar-weekday inactive">
                     <time datetime="2021-05-31">31</time>
                 </button>
@@ -186,9 +215,9 @@
                 <button class="calendar-day calendar-weekend inactive">
                     <time datetime="2021-07-04">4</time>
                 </button>
-               
-             
-            </div> 
+
+
+            </div>
         </div>
     </main>
 
