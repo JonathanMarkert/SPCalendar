@@ -1,4 +1,4 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+ @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 :root {
     --color-green: #009e47;
@@ -7,83 +7,31 @@
     --color-text-grey: #d6d8da;
     --color-background-grey: #9da5b4;
     --color-background-black: #0d1117;
-    --header-height: 7rem;
-}
+    --header-height: 4rem;
+} 
 
-* {
-    padding: 0;
+/* xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px */
+
+*{
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
-}
-
-body {
-    font-family: "Press Start 2P";
 }
 
 body,
 html {
     height: 100vh;
-    width: 100vw;
-}
-
-img {
-    width: 4rem;
+    max-width: 100%;
 }
 
 main {
-    display: flex;
-    /* width: 100%;      */
-/* }
-
-.hide-for-mobile {
-    display: none;
-} */
-
-/* ==================  RESPONSIVENESS ========================= */
-
-/* @media (max-width: 1537px) {
-    
-    body {
-        font-size: 80%;
-    }
-} */
-
-/* DESKTOPLÄGE */
-/* @media (min-width: 1537px) {
-    .hide-for-desktop {
-        display: none;
-    }
-} */
-
-/* LAPTOPLÄGE */
-/* 
-@media (min-width: 1078px) {
-    .hide-for-iPad {
-        display: none;
-    } */
-
-    /* .show-for-iPad {
-        display: inline-block;
-    } */
-
-    /* .hide-for-desktop {
-        display: inline-block;
-    }
-} */
-
-/*==== IPADLÄGE===== */
-
-/* @media screen and (min-width: 768px) { */
-    /* .hide-for-mobile {
-        display:none;
-    } */
-
-    /* .show-for-mobile {
-        display: inline-block;
-    } */
-
-    /* .hide-for-desktop {
-        display: inline-block;
-    }
-     */
-/* } */ 
+    /* display: flex; */
+    width: 100%;
+    height: calc(100vh - (var(--header-height)));
+    background-color: palegreen;
+}

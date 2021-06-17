@@ -20,6 +20,13 @@ footer {
     height: 3rem;
     
 } */
+
+aside {
+  background-color: lightblue;
+  /* flex: 1; */
+  height: 100%;
+}
+
 .active-date {
   display: flex;
   flex-direction: column;
