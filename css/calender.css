@@ -5,7 +5,9 @@
 
 .calendar button {
     border-color: var(--color-background-grey);
-    height: calc(20vh - (var(--header-height)/ 5));
+    border-left: 0px;
+    border-right: 6px solid var(--color-background-grey);
+    height: calc(20vh - (var(--header-height) * 1.5 / 5));
 }
 
 .calendar button:hover{
@@ -15,14 +17,11 @@
 .calendar-grid {
     display: grid;
     grid-template-columns: repeat(7,1fr);
-    
 }
-
 
 .calendar-grid.june button:first-child {
     grid-column: 1;
 }
-
 
 .calendar-week {
     background-color: var(--color-background-black);
@@ -38,13 +37,12 @@
     color: var(--color-purple);
 }
 
-
 .calendar-weekend {
     background-color:var(--color-background-black);
     color: var(--color-orange);
 }
 
 .inactive {
-    background-color: var(--color-background-grey);
+    background-color: var(--color-background-dark-grey);
     color: var(--color-text-grey); 
 }

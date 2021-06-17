@@ -1,65 +1,48 @@
-@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
-
+ @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 :root {
-  --color-green: #009e47;
-  --color-orange: #df4d00;
-  --color-purple: #9300da;
-  --color-text-grey: #d6d8da;
-  --color-background-grey: #9da5b4;
-  --color-background-black: #0D1117;
-  --header-height: 7rem;
-}
+    --color-green: #009e47;
+    --color-orange: #df4d00;
+    --color-purple: #9300da;
+    --color-text-grey: #d6d8da;
+    --color-background-grey: #9da5b4;
+    --color-background-dark-grey: #737477;
+    --color-background-black: #0d1117;
+    --header-height: 4rem;
+} 
+
+/* xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px */
 
 *{
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
-}
-
-body {
-  font-family: "Press Start 2P";
-  
 }
 
 body,
 html {
-  height: 100vh;
-  width: 100vw;
+    max-height: 100%;
+    max-width: 100%;
 }
 
-img {
-    width: 4rem;
+body {
+    font-family: "Press Start 2P";
 }
 
 main {
-    display: flex;
-    width: 100%;     
+    /* display: flex; */
+    width: 100%;
+    height: calc(100vh - (var(--header-height)));
+    background-color: palegreen;
 }
 
-/* ==================  RESPONSIVENESS ========================= */
-
-/*==== MOBILLÄGE===== */
-
-.mobile-only {
-    display: none;
+@media (min-width: 768px) {
+    main {
+        height: calc(100vh - ((var(--header-height) * 1.5)));
+    }
 }
-
-@media screen and (max-width: 39.975em) {
-  
-    
-    .sidebar {
-        width:100%;
-    }
-
-    .desktop-only {
-        display:none !important;
-    }
-    
-    .mobile-only {
-        display: inline-block;
-    }
-    
-}
-  
- 
