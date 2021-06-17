@@ -1,43 +1,12 @@
-/* .sidebar {
-    background-color: var(--color-background-black);
-    color: var(--color-text-grey);    
-    height: calc(100vh - (var(--header-height)- 6rem));   
-}
-
-
-.accordion-wrapper {
-    height: 80%;
-}
-
-.plus-sign{
-    color: var(--color-green);
-}
-
-
-
-footer {
-    background: pink;
-    height: 3rem;
-    
-} */
-
 aside {
-  background-color: lightblue;
-  /* flex: 1; */
   height: 100%;
 }
 
-.active-date {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .today-info {
-  border-top: 3px solid var(--color-background-grey);
+  /* border-top: 3px solid var(--color-background-grey);
   border-bottom: 3px solid var(--color-background-grey);
-  border-left: 3px solid var(--color-background-grey);
+  border-left: 3px solid var(--color-background-grey); */
+  border: 1px solid var(--color-background-grey);
 }
 .grey-invader > img {
   width: 70%;
@@ -51,27 +20,85 @@ aside {
 .sidebar {
   display: flex;
   flex-direction: column;
+  background-color: var(--color-background-black);
+  color: var(--color-text-grey);
+  border: 1px solid var(--color-background-grey);
+}
+
+.todo-list {
+  border-bottom: 1px solid var(--color-background-grey);
 }
 
 aside div.today-info {
   flex: 2;
-  background-color: brown;
 }
 
 aside > div.todo-list {
   flex: 7;
-  background-color: beige;
+
   overflow-y: auto;
+  font-family: "Courier New", Courier, monospace;
 }
 
-aside > div.sort-on-date-button {
+aside > button.sort-on-date-button {
   flex: 1;
-  background-color: coral;
+  border: 1px solid var(--color-background-dark-grey);
+  background-color: var(--color-background-black);
+  color: var(--color-text-grey);
 }
 
-aside > div.test {
+aside > div.create-todo-container {
   flex: 1;
-  background-color: green;
+  background-color: var(--color-green);
+}
+
+.accordion {
+  background-color: var(--color-background-black);
+}
+
+.accordion-item {
+  background-color: var(--color-background-black);
+  border-top: 1px solid var(--color-background-black);
+  border-bottom: 1px solid var(--color-background-black);
+  border-left: 1px solid var(--color-background-grey);
+  border-right: 1px solid var(--color-background-grey);
+}
+
+.accordion-body {
+  background-color: var(--color-background-black);
+}
+
+.todo-date-time-info {
+  text-align: center;
+  border: 1px solid var(--color-background-grey);
+}
+
+.accordion-button {
+  background-color: var(--color-background-grey);
+  font-weight: 800;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--color-purple);
+  color: var(--color-text-grey);
+  font-weight: 800;
+}
+
+.accordion-item:not(.collapsed):last-child {
+  border-bottom: 1px solid var(--color-background-grey);
+}
+
+.accordion-button:focus {
+  border: black;
+  box-shadow: var(--color-background-grey);
+}
+
+.accordion-button.collapsed::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
 }
 
 .create-todo-button {
@@ -79,8 +106,50 @@ aside > div.test {
 }
 
 .create-todo-button:hover {
-  color: blue;
+  color: var(--color-purple);
   cursor: pointer;
-  border-radius: 1rem;
-  box-shadow: 0 0 0.5rem red;
+}
+
+.edit-btn {
+  background-color: var(--color-green);
+  color: var(--color-text-grey);
+  font-weight: 800;
+}
+
+.edit-icon-btn {
+  background-color: rgba(0,0,0,0);
+  color: var(--color-green);
+  border: none;
+  padding-right: 0.5rem;
+}
+
+.edit-icon-btn:hover {
+  transform: scale(1.5);
+}
+
+.remove-btn {
+  background-color: var(--color-orange);
+  color: var(--color-text-grey);
+  font-weight: 800;
+}
+
+.remove-icon-btn {
+  background-color: rgba(0,0,0,0);
+  color: var(--color-orange);
+  border: none;
+}
+
+.remove-icon-btn:hover {
+  transform: scale(1.5);
+}
+
+/* Lägg till todo knapp i desktop läge */
+@media (min-width: 768px) {
+  aside > div.create-todo-container {
+    background-color: var(--color-black);
+  }
+
+  .create-todo-button {
+    color: var(--color-green);
+  }
 }
