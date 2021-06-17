@@ -13,6 +13,7 @@
 }
 
 :root{
+
     --header-height: 4rem;
 }
 
@@ -38,13 +39,3 @@ aside {
     /* flex: 1; */
     height: 100%;
 }
-
-/* calender.css */
-.calendar1 {
-    background-color: pink;
-    /* display: none; */
-}
-
-
-
- 

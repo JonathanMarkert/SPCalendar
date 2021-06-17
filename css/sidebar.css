@@ -4,12 +4,6 @@
     height: calc(100vh - (var(--header-height)- 6rem));   
 }
 
-.today-info {
-    border-top: 3px solid var(--color-background-grey);
-    border-bottom: 3px solid var(--color-background-grey);
-    border-right: 3px solid var(--color-background-grey);
-    
-}
 
 .accordion-wrapper {
     height: 80%;
@@ -19,18 +13,67 @@
     color: var(--color-green);
 }
 
-.grey-invader{
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-}
 
-.grey-invader > img {
-    width: 70%;
-}
 
 footer {
     background: pink;
     height: 3rem;
     
 } */
+.active-date {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.today-info {
+  border-top: 3px solid var(--color-background-grey);
+  border-bottom: 3px solid var(--color-background-grey);
+  border-left: 3px solid var(--color-background-grey);
+}
+.grey-invader > img {
+  width: 70%;
+  width: 4rem;
+}
+.grey-invader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sidebar {
+  display: flex;
+  flex-direction: column;
+}
+
+aside div.today-info {
+  flex: 2;
+  background-color: brown;
+}
+
+aside > div.todo-list {
+  flex: 7;
+  background-color: beige;
+  overflow-y: auto;
+}
+
+aside > div.sort-on-date-button {
+  flex: 1;
+  background-color: coral;
+}
+
+aside > div.test {
+  flex: 1;
+  background-color: green;
+}
+
+.create-todo-button {
+  color: black;
+}
+
+.create-todo-button:hover {
+  color: blue;
+  cursor: pointer;
+  border-radius: 1rem;
+  box-shadow: 0 0 0.5rem red;
+}
