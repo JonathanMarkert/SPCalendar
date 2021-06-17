@@ -6,7 +6,7 @@
 .calendar button {
     border-color: var(--color-background-grey);
     border-left: 0px;
-    height: calc(20vh - (var(--header-height)/ 5));
+    height: calc(20vh - (var(--header-height) * 1.5 / 5));
 }
 
 .calendar button:hover{
@@ -18,11 +18,9 @@
     grid-template-columns: repeat(7,1fr);
 }
 
-
 .calendar-grid.june button:first-child {
     grid-column: 1;
 }
-
 
 .calendar-week {
     background-color: var(--color-background-black);
@@ -37,7 +35,6 @@
     background-color:var(--color-background-black);
     color: var(--color-purple);
 }
-
 
 .calendar-weekend {
     background-color:var(--color-background-black);

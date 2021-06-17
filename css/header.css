@@ -1,40 +1,8 @@
-/* header {
-    background-color: var(--color-background-black);
-    color: var(--color-text-grey);
-    width: 100%;
-    height: var(--header-height);
-}
-
-.arrow {
-    font-size: 2rem;
-
-}
- */
-
-
-/* @media (max-width: 1537px) {
-    h1 {
-        font-size: 2rem;
-    }
-}
-
-@media (max-width: 1295px) {
-    h1 {
-        font-size: 1.5rem;
-    }
-    p {
-        font-size: 0.8rem;
-    }
-} */
-
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
-body {
-    font-family: "Press Start 2P";
-}
-
 header {
-    background-color: palevioletred;
+    background-color: var(--color-background-black);
+    color: var(--color-text-grey);
     height: var(--header-height);
 }
 
@@ -42,8 +10,6 @@ header h1 {
     font-size: 1rem;
     margin: 0;
 }
-
-
 
 .grey-invader > img {
     height: var(--header-height);
@@ -54,25 +20,15 @@ header h1 {
     font-size: 2rem;
 }
 
-.gop-invaders {
-    background-color: black;
-}
-
 .gop-invaders > img {
     height: 50%;
 } 
 
-.date-time-info {
-    background-color: cadetblue;
-}
-
 .month-div {
-    background-color: aquamarine;
     height: 4rem;
 }
 
 .days-div {
-    background-color: blanchedalmond;
     height: 2rem;
 }
 
@@ -83,17 +39,5 @@ header h1 {
 
     header h1 {
         font-size: 2rem;
-    }
-    
-    .grey-invader{
-        height: 100%;
-    }
-    
-    .gop-invaders{
-        height: 100%;
-    }
-    
-    .date-time-info{
-        height: 100%;
     }
 }
