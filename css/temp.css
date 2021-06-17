@@ -13,13 +13,8 @@
 }
 
 :root{
-    --color-green: #009e47;
-    --color-orange: #df4d00;
-    --color-purple: #9300da;
-    --color-text-grey: #d6d8da;
-    --color-background-grey: #9da5b4;
-    --color-background-black: #0d1117;
-    --header-height: 8rem;
+
+    --header-height: 4rem;
 }
 
 body,
@@ -35,11 +30,7 @@ main {
     background-color: palegreen;
 }
 
-/* header.css */
-header {
-    background-color: palevioletred;
-    height: var(--header-height);
-}
+
 
 
 /* sidebar.css */
