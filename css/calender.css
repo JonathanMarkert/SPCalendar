@@ -5,6 +5,7 @@
 
 .calendar button {
     border-color: var(--color-background-grey);
+    border-left: 0px;
     height: calc(20vh - (var(--header-height)/ 5));
 }
 
@@ -44,6 +45,6 @@
 }
 
 .inactive {
-    background-color: var(--color-background-grey);
+    background-color: var(--color-background-dark-grey);
     color: var(--color-text-grey); 
 }
