@@ -43,25 +43,26 @@
                 <h1 class="px-md-3">JUNI 2021</h1>
                 <i class="fas fa-chevron-right arrow"></i>
             </div>
+            <!-- days that shows on IPad/laptop -->
                 <div class="days-div d-none d-md-flex d-xl-none align-items-center">
-                    <p class="col mb-0 d-flex justify-content-around">Mon</p>
-                    <p class="col mb-0 d-flex justify-content-around">Tue</p>
-                    <p class="col mb-0 d-flex justify-content-around">Wed</p>
-                    <p class="col mb-0 d-flex justify-content-around">Thu</p>
-                    <p class="col mb-0 d-flex justify-content-around">Fri</p>
-                    <p class="col mb-0 d-flex justify-content-around">Sat</p>
-                    <p class="col mb-0 d-flex justify-content-around">Sun</p>
+                    <p class="col mb-0 d-flex justify-content-around">Mån</p>
+                    <p class="col mb-0 d-flex justify-content-around">Tis</p>
+                    <p class="col mb-0 d-flex justify-content-around">Ons</p>
+                    <p class="col mb-0 d-flex justify-content-around">Tor</p>
+                    <p class="col mb-0 d-flex justify-content-around">Fre</p>
+                    <p class="col mb-0 d-flex justify-content-around">Lör</p>
+                    <p class="col mb-0 d-flex justify-content-around">Sön</p>
                 </div>
+                <!-- days that shows on desktop -->
                 <div class="days-div d-none d-xl-flex align-items-center">
-                    <p class="col mb-0 d-flex justify-content-around">Monday</p>
-                    <p class="col mb-0 d-flex justify-content-around">Tuesday</p>
-                    <p class="col mb-0 d-flex justify-content-around">Wednesday</p>
-                    <p class="col mb-0 d-flex justify-content-around">Thursday</p>
-                    <p class="col mb-0 d-flex justify-content-around">Friday</p>
-                    <p class="col mb-0 d-flex justify-content-around">Saturday</p>
-                    <p class="col mb-0 d-flex justify-content-around">Sunday</p>
+                    <p class="col mb-0 d-flex justify-content-around">Måndag</p>
+                    <p class="col mb-0 d-flex justify-content-around">Tisdag</p>
+                    <p class="col mb-0 d-flex justify-content-around">Onsdag</p>
+                    <p class="col mb-0 d-flex justify-content-around">Torsdag</p>
+                    <p class="col mb-0 d-flex justify-content-around">Fredag</p>
+                    <p class="col mb-0 d-flex justify-content-around">Lördag</p>
+                    <p class="col mb-0 d-flex justify-content-around">Söndag</p>
                 </div>
-            <!-- add shortened day name divs if needed -->
         </div>
     
     </header>
@@ -92,14 +93,20 @@
                         </h2>
                         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                             data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <strong>This is the first item's accordion body.</strong> It is shown by default, until
-                                the collapse plugin adds the appropriate classes that we use to style each element.
-                                These classes control the overall appearance, as well as the showing and hiding via CSS
-                                transitions. You can modify any of this with custom CSS or overriding our default
-                                variables. It's also worth noting that just about any HTML can go within the
-                                <code>.accordion-body</code>, though the transition does limit overflow.
+                            <div class="accordion-body d-flex flex-column">
+                                <div class="todo-date-time-info my-3">1 juni 2021 kl. 13.00 - 14.00</div>
+                                
+                                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore facere fuga officiis quas molestias necessitatibus iste, quisquam dolore repudiandae voluptatem quibusdam, sapiente, explicabo sunt perspiciatis magnam. Voluptates possimus dignissimos modi.</div>
+                               <!-- mobile buttons -->
+                                <button class="btn edit-btn my-3 d-md-none ">Ändra</button>
+                                <button class="btn remove-btn d-md-none">Ta Bort</button>
+                                <!-- Desktop buttons -->
+                                <div class="d-none d-md-flex justify-content-end">
+                                    <button class=" edit-icon-btn fa-2x"><i class="fas fa-edit"></i></button>
+                                    <button class="remove-icon-btn fa-2x"><i class="fas fa-trash-alt"></i></button>
+                                </div>
                             </div>
+                    
                         </div>
                     </div>
                     <div class="accordion-item">
@@ -143,30 +150,12 @@
                 </div>
                </div>
 
-            <div class="d-md-none d-flex align-items-center justify-content-center sort-on-date-button">
-                <p>filter on date</p>
-            </div>
-            <div class="col-12 col-md-3 d-flex align-items-center justify-content-center create-todo-container">
+            <button class="d-md-none d-flex align-items-center justify-content-center sort-on-date-button">
+                <p>filtrera efter datum</p>
+            </button>
+            <div class="col-12 col-md-4 col-lg-2 d-flex align-items-center justify-content-center  create-todo-container ">
                 <i class="fas fa-plus fa-3x create-todo-button"></i>
             </div>
-
-
-            <!-- Välkommsinfo -->
-            <!-- <div class="today-info row" > -->
-            <!-- invader ska inte visas i mobil läge. visas i pada -->
-            <!-- <div class="col-md-4 grey-invader hide-for-mobile" style="background-color: red;"> 
-                    <img src="./img/space-invaders.png" alt="">
-                </div>
-                <div class= "col-sm-12 col-md-8 " style="background-color: blue;">
-                    <p class="mb-1">Onsdag</p>
-                    <p class="mb-1">10 Juni</p>
-                    <p class="mb-1">13:00</p>
-                </div>
-               
-            </div>
-            <footer>
-                <span><i class="fas fa-plus plus-sign"></i> </span>
-            </footer>  -->
         </aside>
 
         <!-- Main Calendar -->
