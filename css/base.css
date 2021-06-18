@@ -32,6 +32,7 @@ html {
 
 body {
     font-family: "Press Start 2P";
+    background-color: var(--color-background-black);
 }
 
 main {
