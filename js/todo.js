@@ -1,3 +1,4 @@
+const todos = [];
 
 function initTodos() {
     addEventListeners();
@@ -9,6 +10,9 @@ function addEventListeners() {
     
     const exitButton = document.querySelector('.exitButton');
     exitButton.addEventListener('click', closeCreateNewTodoForm);
+
+    const submitButton = document.getElementById('save-btn');
+    submitButton.addEventListener('click', handleSubmit);
 }
 
 
@@ -28,7 +32,18 @@ function closeCreateNewTodoForm() {
     sidebarWrapper.classList.remove('d-none');
 }
 
-
+function handleSubmit(event) {
+    event.preventDefault();
+    const todoTitle = document.getElementById('todo-name').value;
+    const todoDate = document.getElementById('date').value;
+    const todoStarttime = document.getElementById('starttime').value;
+    const todoEndtime = document.getElementById('endtime').value;
+    const todoDescription = document.getElementById('todo-description').value;
+    todo = { title: todoTitle, date: todoDate, starttime: todoStarttime, endtime: todoEndtime, description: todoDescription }
+    todos.push(todo);
+    console.log(todo);
+    document.querySelector('form').reset();
+}
 
 
 
