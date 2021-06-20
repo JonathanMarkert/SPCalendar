@@ -102,7 +102,7 @@ function renderTodos() {
             </button>
         </h2>
         <div id="collapse${todo.id}" class="accordion-body-div  accordion-collapse collapse "  aria-labelledby="heading${todo.id}"
-        data-bs-parent="#accordionExample">
+        data-bs-parent="#accordion">
             <div class="accordion-body d-flex flex-column">
                 <div class="todo-date-time-info my-3">${todo.date + ' ' + todo.starttime + " - " + todo.endtime}</div>
                 <div class="description">${todo.description}</div>
