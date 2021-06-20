@@ -89,74 +89,45 @@ function uuidv4() {
 // renderar todo när todo är hårdkodad
 function renderTodos() {
     const accordionContainer = document.querySelector('.todo-list .accordion');
-    accordionContainer.innerHTML = 
-    `<template id="accordion-item">
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Accordion Item #1
-                </button>
-            </h2>
-            <div id="collapseOne" class="accordion-body-div  accordion-collapse collapse "  aria-labelledby="headingOne"
-                data-bs-parent="#accordionExample">
-                <div class="accordion-body d-flex flex-column">
-                    <div class="todo-date-time-info my-3">1 juni 2021 kl. 13.00 - 14.00</div>
-                    
-                    <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore facere fuga officiis quas molestias necessitatibus iste, quisquam dolore repudiandae voluptatem quibusdam, sapiente, explicabo sunt perspiciatis magnam. Voluptates possimus dignissimos modi.</div>
+    accordionContainer.innerHTML = "";
+    // for loop
+    todos.forEach(function(todo) {
+        const todoItem = document.createElement('div')
+        todoItem.className = 'accordion-item'
+        const todoContent =
+        `<h2 class="accordion-header" id="heading${todo.id}">
+            <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapse${todo.id}" aria-expanded="true" aria-controls="collapse${todo.id}">
+                ${todo.title}
+            </button>
+        </h2>
+        <div id="collapse${todo.id}" class="accordion-body-div  accordion-collapse collapse "  aria-labelledby="heading${todo.id}"
+        data-bs-parent="#accordionExample">
+            <div class="accordion-body d-flex flex-column">
+                <div class="todo-date-time-info my-3">${todo.date + ' ' + todo.starttime + " - " + todo.endtime}</div>
+                
+                <div class="description">${todo.description}</div>
                 <!-- mobile buttons -->
-                    <button class="btn edit-btn my-3 d-md-none ">Ändra</button>
-                    <button class="btn remove-btn d-md-none">Ta Bort</button>
-                    <!-- Desktop buttons -->
-                    <div class="d-none d-md-flex justify-content-end" >
-                        <button class=" edit-icon-btn fa-2x"><i class="fas fa-edit"></i></button>
-                        <button class="delete-btn remove-icon-btn fa-2x"><i class="fas fa-trash-alt"></i></button>
-                    </div>
+                <button class="btn edit-btn my-3 d-md-none ">Ändra</button>
+                <button class="btn remove-btn d-md-none">Ta Bort</button>
+                <!-- Desktop buttons -->
+                <div class="d-none d-md-flex justify-content-end" >
+                    <button class=" edit-icon-btn fa-2x"><i class="fas fa-edit"></i></button>
+                    <button onclick="deleteTodo(${todo.id})" class="delete-btn remove-icon-btn fa-2x"><i class="fas fa-trash-alt"></i></button>
                 </div>
             </div>
-        </div>
-    </template>`;
-    const template = document.querySelector('#accordion-item');
-    
-    // for loop
-    for (todo of todos) {
-        
-        const accordion = template.content.cloneNode(true);
-        // console.log(accordion);
-        // hämta ut
-        const accordionHeaderH2 = accordion.querySelector(".accordion-header");
-        accordionHeaderH2.id = 'heading' + todo.id;
-        
-        const accordionHeader = accordion.querySelector(".accordion-header button");
-        accordionHeader.setAttribute('data-bs-target', '#collapse' + todo.id)
-        accordionHeader.setAttribute('aria-controls', 'collapse' + todo.id)
-        
-        
-        const accordionBody = accordion.querySelector(".accordion-body-div");
-        accordionBody.id = 'collapse' + todo.id;
-        accordionBody.setAttribute('aria-labelledby', 'heading' + todo.id);
-        
-        accordionHeader.innerHTML = todo.title;
-        
-        const dateDiv = accordion.querySelector(".todo-date-time-info");
-        dateDiv.innerHTML = todo.date + ' ' + todo.starttime + " - " + todo.endtime;
-        
-        const descriptionDiv = accordion.querySelector(".description");
-        descriptionDiv.innerHTML = todo.description;
-        
-        // event till andra knappar
-        const deleteButton = accordion.querySelector(".delete-btn");
-        deleteButton.addEventListener('click', () => deleteTodo(todo));
-
-        accordionContainer.append(accordion);
-    }
+        </div>`;
+        todoItem.innerHTML = todoContent
+        accordionContainer.append(todoItem);
+    });
     // for loop end
     console.log(todos);
+}
 
-    
-    // olika syntax för samma sak. localstorage.
-    // localStorage.todos = []
-    // localStorage.setItem('todos', [])
+function deleteTodo(id) {
+    const index = todos.findIndex(todo => todo.id == id);
+    todos.splice(index , 1);
+    renderTodos();
 }
 
 
@@ -176,12 +147,12 @@ function renderTodos() {
 //     // console.log(id);
 // }
 
-function deleteTodo(todo) {
-    const index = todos.indexOf(todo);
-    todos.splice(index, 1);
-    console.log(todos);
-    renderTodos();
-}
+// function deleteTodo(todo) {
+//     const index = todos.indexOf(todo);
+//     todos.splice(index, 1);
+//     console.log(todos);
+//     renderTodos();
+// }
 
 
 
