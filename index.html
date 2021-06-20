@@ -92,24 +92,27 @@
                         <template id="accordion-item">
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    <!-- lägg till  collapsed om det är fel läge -->
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                         Accordion Item #1
                                     </button>
                                 </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body d-flex flex-column">
-                                        <div class="todo-date-time-info my-3">1 juni 2021 kl. 13.00 - 14.00</div>
-                                        
-                                        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore facere fuga officiis quas molestias necessitatibus iste, quisquam dolore repudiandae voluptatem quibusdam, sapiente, explicabo sunt perspiciatis magnam. Voluptates possimus dignissimos modi.</div>
+                                <!-- lagt till en klass för att hämta i js ev ta bort show om det är i fel läge -->
+                                <div id="collapseOne" class=" accordion-body-div accordion-collapse collapse " aria-labelledby="headingOne"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body d-flex flex-column">
+                                    <div class="todo-date-time-info my-3">1 juni 2021 kl. 13.00 - 14.00</div>
+                                    
+                                    <!-- lagt till en klass för att hämta i js  -->
+                                        <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore facere fuga officiis quas molestias necessitatibus iste, quisquam dolore repudiandae voluptatem quibusdam, sapiente, explicabo sunt perspiciatis magnam. Voluptates possimus dignissimos modi.</div>
                                        <!-- mobile buttons -->
                                         <button class="btn edit-btn my-3 d-md-none ">Ändra</button>
                                         <button class="btn remove-btn d-md-none">Ta Bort</button>
                                         <!-- Desktop buttons -->
                                         <div class="d-none d-md-flex justify-content-end" >
                                             <button class=" edit-icon-btn fa-2x"><i class="fas fa-edit"></i></button>
-                                            <button class="remove-icon-btn fa-2x"><i class="fas fa-trash-alt"></i></button>
+                                            <button class="delete-btn remove-icon-btn fa-2x"><i class="fas fa-trash-alt"></i></button>
                                         </div>
                                     </div>
                             
