@@ -56,7 +56,7 @@ function closeCreateNewTodoForm() {
 
 function handleSubmit(event) {
     event.preventDefault();
-    const todoId = Math.random().toString();
+    const todoId = uuidv4();
     const todoTitle = document.getElementById('todo-name').value;
     const todoDate = document.getElementById('date').value;
     const todoStarttime = document.getElementById('starttime').value;
@@ -72,6 +72,13 @@ function handleSubmit(event) {
     // renderar om listan
     renderTodos();
 }
+
+// hittade en guid funktion på stackoverflow https://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid
+function uuidv4() {
+    return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+      (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+    );
+  }
 
 // renderar todo när todo är hårdkodad
 function renderTodos() {
