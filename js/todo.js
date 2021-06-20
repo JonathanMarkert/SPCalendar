@@ -6,14 +6,14 @@ let todos = [
     // index/guid
         id: "1",
         title: "Städa", 
-        date: "2021-07-01", 
+        date: "2021-06-01", 
         starttime: "13:30", 
         endtime: "15:27", 
         description: "noga under sängen"
     }, {
         id: "2",
         title: "Gå ut med hunden", 
-        date: "2021-07-02", 
+        date: "2021-06-02", 
         starttime: "16:30", 
         endtime: "17:27", 
         description: "lång promenad"
