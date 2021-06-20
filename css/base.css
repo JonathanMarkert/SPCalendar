@@ -32,14 +32,16 @@ html {
 
 body {
     font-family: "Press Start 2P";
+    background-color: var(--color-background-black);
 }
 
 main {
     /* display: flex; */
     width: 100%;
     height: calc(100vh - (var(--header-height)));
-    background-color: palegreen;
+    /* background-color: palegreen; */
 }
+
 
 @media (min-width: 768px) {
     main {
