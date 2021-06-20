@@ -56,12 +56,13 @@ function closeCreateNewTodoForm() {
 
 function handleSubmit(event) {
     event.preventDefault();
+    const todoId = Math.random().toString();
     const todoTitle = document.getElementById('todo-name').value;
     const todoDate = document.getElementById('date').value;
     const todoStarttime = document.getElementById('starttime').value;
     const todoEndtime = document.getElementById('endtime').value;
     const todoDescription = document.getElementById('todo-description').value;
-    todo = { title: todoTitle, date: todoDate, starttime: todoStarttime, endtime: todoEndtime, description: todoDescription }
+    todo = { id: todoId, title: todoTitle, date: todoDate, starttime: todoStarttime, endtime: todoEndtime, description: todoDescription }
     todos.push(todo);
     console.log(todo);
     document.querySelector('form').reset();
