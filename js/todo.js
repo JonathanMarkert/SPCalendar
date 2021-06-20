@@ -1,8 +1,7 @@
 // const todos = [];
 
 // för att kunna rendera något
-let todos = [
-    {
+const todos = [{
     // index/guid
         id: "1",
         title: "Städa", 
@@ -17,8 +16,15 @@ let todos = [
         starttime: "16:30", 
         endtime: "17:27", 
         description: "lång promenad"
-    }
-]
+    }, {
+        id: "3",
+        title: "Gå ut med kattskrället", 
+        date: "2021-07-03", 
+        starttime: "14:30", 
+        endtime: "14:33", 
+        description: "kort promenad"
+    }]
+
 
 function initTodos() {
     addEventListeners();
@@ -139,8 +145,9 @@ function renderTodos() {
         descriptionDiv.innerHTML = todo.description;
         
         // event till andra knappar
-        // const deleteButton = accordion.querySelector(".delete-btn");
-        // deleteButton.addEventListener('click', () => deleteTodo(todo));
+        const deleteButton = accordion.querySelector(".delete-btn");
+        deleteButton.addEventListener('click', () => deleteTodo(todo));
+
         accordionContainer.append(accordion);
     }
     // for loop end
@@ -154,3 +161,38 @@ function renderTodos() {
 
 
 
+// function deleteTodo(id) {
+//     // const id = todo.id;
+//     console.log(id)
+
+//     // for (var i = 0; i < todos.length; i++) {
+//     //     if(todos[i].id == id) {
+//     //         todos.splice(i, 1);
+//     //         break;
+//     //     }
+//     // }
+//     // console.log(todos);
+//     // renderTodos();
+//     // console.log(id);
+// }
+
+function deleteTodo(todo) {
+    const index = todos.indexOf(todo);
+    todos.splice(index, 1);
+    console.log(todos);
+    renderTodos();
+}
+
+
+
+// const array = [2, 5, 9];
+
+// console.log(array);
+
+// const index = array.indexOf(5);
+// if (index > -1) {
+//   array.splice(index, 1);
+// }
+
+// // array = [2, 9]
+// console.log(array); 
