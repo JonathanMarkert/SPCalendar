@@ -105,7 +105,6 @@ function renderTodos() {
         data-bs-parent="#accordionExample">
             <div class="accordion-body d-flex flex-column">
                 <div class="todo-date-time-info my-3">${todo.date + ' ' + todo.starttime + " - " + todo.endtime}</div>
-                
                 <div class="description">${todo.description}</div>
                 <!-- mobile buttons -->
                 <button class="btn edit-btn my-3 d-md-none ">Ändra</button>
