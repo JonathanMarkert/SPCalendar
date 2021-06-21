@@ -69,19 +69,18 @@
     cursor: default;
 }
 
-.todoCalendarIcon {
-    height: 2rem;
-    display: block;
-    float: left;
-}
-
-
 #icon {
     position: absolute;
     font-size: 1.5rem;
     bottom: 0.5rem;
     right: 0.5rem;
+    color:var(--color-green);
 }
+
+.calendar-button:hover #icon {
+    color: var(--color-purple);
+}
+
 #icon-span {
     position: absolute;
     font-size: 0.7rem;
