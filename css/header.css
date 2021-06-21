@@ -11,6 +11,10 @@ header h1 {
     margin: 0;
 }
 
+header h1::first-letter{
+    text-transform: uppercase;
+}
+
 .grey-invader > img {
     height: var(--header-height);
     padding: 0.5rem;
@@ -18,6 +22,7 @@ header h1 {
 
 .arrow {
     font-size: 2rem;
+    cursor: pointer;
 }
 
 .gop-invaders > img {

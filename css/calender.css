@@ -1,27 +1,34 @@
 .calendar {
     height: 100%;    
     justify-content: normal;
+    /* background-color: var(--color-background-dark-grey); */
+    background-color: var(--color-background-black);
+    
 }
 
-.calendar button {
+.calendar-button {
     border-color: var(--color-background-grey);
-    border-left: 0px;
-    border-right: 6px solid var(--color-background-grey);
-    height: calc(20vh - (var(--header-height) * 1.5 / 5));
+    /* border-left: 0px; */
+    border: 1px solid var(--color-background-grey);
+    /* height: calc(20vh - (var(--header-height) * 1.5 / 5)); */
+    height: calc(16.6666vh - (var(--header-height) * 1.5 / 6));
 }
 
-.calendar button:hover{
+.calendar button.calendar-weekday:hover{
     background-color: var(--color-green);
 }
 
 .calendar-grid {
     display: grid;
     grid-template-columns: repeat(7,1fr);
+    /* grid-auto-flow: dense; */
+    grid-auto-rows: auto;
+    
 }
 
-.calendar-grid.june button:first-child {
+/* .calendar-grid.june button:first-child {
     grid-column: 1;
-}
+} */
 
 .calendar-week {
     background-color: var(--color-background-black);
@@ -37,12 +44,26 @@
     color: var(--color-purple);
 }
 
-.calendar-weekend {
+.calendar-weekday:nth-child(7n) {
+    background-color:var(--color-background-black);
+    color: var(--color-orange);
+}
+
+.calendar-weekday:nth-child(7n - 1) {
     background-color:var(--color-background-black);
     color: var(--color-orange);
 }
 
 .inactive {
-    background-color: var(--color-background-dark-grey);
+    /* background-color: var(--color-background-dark-grey); */
+    background-color: var(--color-background-black);
     color: var(--color-text-grey); 
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid var(--color-background-grey);
+   }
+
+.inactive:hover {
+    cursor: default;
 }

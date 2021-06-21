@@ -1,55 +1,76 @@
-
+let monthSelector = 0;
+const weekdays = ['måndag', 'tisdag', 'onsdag', 'torsdag', 'fredag', 'lördag', 'söndag'];
 
 function initCalender() {
-    // testThisShit();
-    test();
+    renderCalender()
+    initButtons()
 }
 
-function testThisShit(){
-    const nr = 0;
-    const calenderDate = document.querySelectorAll('datetime');
-    for(datetime of calenderDate)
-    {
-        for(item of todos)
-        {
-           if (sameDay(item.date, datetime.date)) {
-            //    rendera 
-    
-            const day = document.querySelector('.calendar-grid button'); 
-            day.innerHTML = 
-            `<div>${nr++}</div>`
-           }
-            console.log(item.date)
-            
-        }
-
+function renderCalender() {
+    const calendarContainer = document.getElementById('calendar');
+    const date = new Date();
+    if (monthSelector !== 0) {
+        date.setMonth(new Date().getMonth() + monthSelector);
     }
+    const day = date.getDate();
+    const month = date.getMonth();
+    const year = date.getFullYear();
+    const firstDayOfTheMonth = new Date(year, month, 1);
+    const numberOfDaysInMonth = new Date(year, month + 1, 0).getDate();
+
+    const dateString = firstDayOfTheMonth.toLocaleDateString('sv-SE', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'numeric',
+        day: 'numeric',
+    });
+    const inactiveDays = weekdays.indexOf(dateString.split(', ')[0]);
     
-}
-
-
-
-function test(){
-    const month = new Date().getMonth();
-
-    for(const i = 1; i < month.length; i++) {
-        // const date = new Date()
-        // const day = date.day
-        const calendarDay = document.querySelector('.calendar-grid');
-        calendarDay = ` 
-        <button class="calendar-day may calendar-weekday inactive">
-        <div>${i}</div>
-        </button>`
+    document.getElementById('monthDisplay').innerText = `${date.toLocaleDateString('sv-se', {month: 'long'})} ${year}`;
+    
+    calendarContainer.innerHTML = '';
+    
+    for (let i = 1; i <= inactiveDays + numberOfDaysInMonth; i++) {
+        const daySquare = document.createElement('button');
+        daySquare.classList.add('calendar-button')
         
+        // const dayString = `${month+1}/${i- inactiveDays}/${year}`;
+
+        if (i > inactiveDays ) {
+            daySquare.innerText = i - inactiveDays;
+            daySquare.classList.add('calendar-weekday')
+            //const eventsForDay
+
+            // if (i - inactiveDays === day && nav === 0) {
+            //     daySquare.id = 'currentDay';
+            // }
+        }
+        // else if() {
+        //
+        // }
+
+        else {
+            daySquare.classList.add('inactive');
+        }
+        
+    
+
+        calendarContainer.appendChild(daySquare);
     }
 }
 
-/* <time datetime="${month.getDate()}">${day}</time> */
+function initButtons(){
+    document.getElementById('nextButton').addEventListener('click', () => {
+    monthSelector++;
+    console.log(monthSelector);
+    renderCalender();
+});
 
-function sameDay(dayOne,dayTwo) {
-    return dayOne.getFullYear() === dayTwo.getFullYear() &&
-    dayOne.getMonth() === dayTwo.getMonth() &&
-    dayOne.getDate() === dayTwo.getDate();
+document.getElementById('backButton').addEventListener('click', () => {
+    monthSelector--;
+    console.log(monthSelector);
+    renderCalender();
+  });
 }
 
 
