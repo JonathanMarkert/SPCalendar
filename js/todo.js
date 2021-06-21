@@ -18,10 +18,24 @@ const todos = [{
     }, {
         id: "3",
         title: "Gå ut med kattskrället", 
-        date: "2021-07-03", 
+        date: "2021-06-10", 
         starttime: "14:30", 
         endtime: "14:33", 
         description: "kort promenad"
+    }, {
+        id: "4",
+        title: "Gå ut med kattskrället", 
+        date: "2021-06-10", 
+        starttime: "14:30", 
+        endtime: "14:33", 
+        description: "kort promenad"
+    }, {
+        id: "5",
+        title: "Städa under sängen", 
+        date: "2021-07-10", 
+        starttime: "14:30", 
+        endtime: "14:33", 
+        description: "noga!!!"
     }]
 
 

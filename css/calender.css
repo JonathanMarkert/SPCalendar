@@ -12,6 +12,7 @@
     border: 1px solid var(--color-background-grey);
     /* height: calc(20vh - (var(--header-height) * 1.5 / 5)); */
     height: calc(16.6666vh - (var(--header-height) * 1.5 / 6));
+    position: relative;
 }
 
 .calendar button.calendar-weekday:hover{
@@ -67,3 +68,39 @@
 .inactive:hover {
     cursor: default;
 }
+
+.todoCalendarIcon {
+    height: 2rem;
+    display: block;
+    float: left;
+}
+
+
+#icon {
+    position: absolute;
+    font-size: 1.5rem;
+    bottom: 0.5rem;
+    right: 0.5rem;
+}
+#icon-span {
+    position: absolute;
+    font-size: 0.7rem;
+    color: black;
+    bottom: 0.4rem;
+    right: 0.75rem;
+}
+
+/* @media (min-width: 1200px) {
+    #icon-div {
+        position: absolute;
+        font-size: 2rem;
+        top: 4rem;
+        right: 0.5rem;
+    }
+    #icon-span {
+        position: absolute;
+        color: black;
+        top: 3.8rem;
+        right: 0.8rem;
+    }
+} */
