@@ -64,11 +64,14 @@ function renderCalender()
         // console.log("slice:" + todo.date.slice(-2));
         let daysDate = todo.date.slice(-2);
         let activeMonth = todo.date.slice(-5, -3);
-        if (dateOfI == daysDate && (month+1)==activeMonth) {
+        let activeYear = todo.date.slice(-10, -6);
+        if (dateOfI == daysDate && (month+1)==activeMonth && year == activeYear){
           numberOfTodos += 1;
         //   console.log("todosadded=" + numberOfTodos);
         //   console.log("month"+month)
         //   console.log("monthsplice:"+activeMonth)
+    //    console.log("year " + year)
+      //  console.log("yearSplice  " + activeYear)
         }
 
         // console.log(i);
