@@ -94,9 +94,9 @@ function renderCalender()
 
       //const eventsForDay
 
-      // if (i - inactiveDays === day && monthSelector === 0) {
-      //         daySquare.id = 'currentDay';
-      //     }
+      if (i - inactiveDays === day && monthSelector === 0) {
+              daySquare.id = 'currentDay';
+          }
     } 
     
     else {

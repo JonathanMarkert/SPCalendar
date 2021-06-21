@@ -90,6 +90,18 @@
     right: 0.75rem;
 }
 
+#currentDay {
+    color: var(--color-green);
+}
+
+#currentDay:hover {
+    color: black;
+}
+
+#currentDay:hover > #icon-span {
+    color: var(--color-green);
+}
+
 /* @media (min-width: 1200px) {
     #icon-div {
         position: absolute;
