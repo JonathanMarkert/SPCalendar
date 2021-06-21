@@ -87,6 +87,7 @@ function handleSubmit(event) {
 
     closeCreateNewTodoForm();
     renderTodos();
+    renderCalender();
 }
 
 // hittade en guid funktion på stackoverflow https://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid
