@@ -63,11 +63,12 @@ function renderCalender()
         // console.log("date of I:" + dateOfI);
         // console.log("slice:" + todo.date.slice(-2));
         let daysDate = todo.date.slice(-2);
-        let activeMonth = todo.date.slice(-5);
-        if (dateOfI == daysDate) {
+        let activeMonth = todo.date.slice(-5, -3);
+        if (dateOfI == daysDate && (month+1)==activeMonth) {
           numberOfTodos += 1;
-          console.log("todosadded=" + numberOfTodos);
-          console.log("month"+month +1)
+        //   console.log("todosadded=" + numberOfTodos);
+        //   console.log("month"+month)
+        //   console.log("monthsplice:"+activeMonth)
         }
 
         // console.log(i);
