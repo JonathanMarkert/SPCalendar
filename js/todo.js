@@ -2,7 +2,6 @@
 
 // för att kunna rendera något
 const todos = [{
-    // index/guid
         id: "1",
         title: "Städa", 
         date: "2021-07-01", 
@@ -28,7 +27,6 @@ const todos = [{
 
 function initTodos() {
     addEventListeners();
-    // rendera direkt man kör programmet
     renderTodos();
 }
 
@@ -73,9 +71,7 @@ function handleSubmit(event) {
     console.log(todo);
     document.querySelector('form').reset();
 
-    // stänger create fönstret
     closeCreateNewTodoForm();
-    // renderar om listan
     renderTodos();
 }
 
@@ -90,7 +86,6 @@ function uuidv4() {
 function renderTodos() {
     const accordionContainer = document.querySelector('.todo-list .accordion');
     accordionContainer.innerHTML = "";
-    // for loop
     todos.forEach(function(todo) {
         const todoItem = document.createElement('div')
         todoItem.className = 'accordion-item'
@@ -119,8 +114,6 @@ function renderTodos() {
         todoItem.innerHTML = todoContent
         accordionContainer.append(todoItem);
     });
-    // for loop end
-    console.log(todos);
 }
 
 function deleteTodo(id) {
@@ -128,41 +121,3 @@ function deleteTodo(id) {
     todos.splice(index , 1);
     renderTodos();
 }
-
-
-
-// function deleteTodo(id) {
-//     // const id = todo.id;
-//     console.log(id)
-
-//     // for (var i = 0; i < todos.length; i++) {
-//     //     if(todos[i].id == id) {
-//     //         todos.splice(i, 1);
-//     //         break;
-//     //     }
-//     // }
-//     // console.log(todos);
-//     // renderTodos();
-//     // console.log(id);
-// }
-
-// function deleteTodo(todo) {
-//     const index = todos.indexOf(todo);
-//     todos.splice(index, 1);
-//     console.log(todos);
-//     renderTodos();
-// }
-
-
-
-// const array = [2, 5, 9];
-
-// console.log(array);
-
-// const index = array.indexOf(5);
-// if (index > -1) {
-//   array.splice(index, 1);
-// }
-
-// // array = [2, 9]
-// console.log(array); 
