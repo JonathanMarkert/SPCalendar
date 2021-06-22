@@ -23,6 +23,7 @@
     <script src="https://kit.fontawesome.com/bfedc06eab.js" crossorigin="anonymous"></script>
     <!-- Js  -->
     <script src="./js/main.js"></script>
+    <script src="./js/calender.js"></script>
     <script src="./js/todo.js"></script>
 </head>
 
@@ -43,9 +44,9 @@
         <!-- Date & Year div -->
         <div class="flex-fill">
             <div class="month-div d-flex align-items-center justify-content-between px-3 justify-content-md-center">
-                <i class="fas fa-chevron-left arrow"></i>
-                <h1 class="px-md-3">JUNI 2021</h1>
-                <i class="fas fa-chevron-right arrow"></i>
+                <i id="backButton" class="fas fa-chevron-left arrow"></i>
+                <h1 id="monthDisplay" class="px-md-3"></h1>
+                <i id="nextButton" class="fas fa-chevron-right arrow"></i>
             </div>
             <!-- days that shows on IPad/laptop -->
                 <div class="days-div d-none d-md-flex d-xl-none align-items-center">
@@ -135,118 +136,8 @@
         <!-- Main Calendar -->
         <div class="calendar d-none d-md-block col-md-9 ">
             <!-- hide whole section in mobile version -->
-            <div class="calendar-grid june">
-                <button class="calendar-day may calendar-weekday inactive">
-                    <time datetime="2021-05-31">31</time>
-                </button>
-                <button class="calendar-day june calendar-weekday">
-                    <time datetime="2021-06-01">1</time>
-                </button>
-                <button class="calendar-day calendar-weekday">
-                    <time datetime="2021-06-02">2</time>
-                </button>
-                <button class="calendar-day calendar-weekday">
-                    <time datetime="2021-06-03">3</time>
-                </button>
-                <button class="calendar-day calendar-weekday">
-                    <time datetime="2021-06-04">4</time>
-                </button>
-                <button class="calendar-day calendar-weekend">
-                    <time datetime="2021-06-05">5</time>
-                </button>
-                <button class="calendar-day calendar-weekend">
-                    <time datetime="2021-06-06">6</time>
-                </button>
-                <button class="calendar-day calendar-weekday">
-                    <time datetime="2021-06-07">7</time>
-                </button>
-
-                <button class="calendar-day calendar-weekday">
-                    <time datetime="2021-06-08">8</time>
-                </button>
-                <button class="calendar-day calendar-weekday">
-                    <time datetime="2021-06-09">9</time>
-                </button>
-                <button class="calendar-day calendar-weekday">
-                    <time datetime="2021-06-10">10</time>
-                </button>
-                <button class="calendar-day calendar-weekday">
-                    <time datetime="2021-06-11">11</time>
-                </button>
-                <button class="calendar-day calendar-weekend">
-                    <time datetime="2021-06-12">12</time>
-                </button>
-                <button class="calendar-day calendar-weekend">
-                    <time datetime="2021-06-13">13</time>
-                </button>
-                <button class="calendar-day calendar-weekday">
-                    <time datetime="2021-06-14">14</time>
-                </button>
-
-                <button class="calendar-day calendar-weekday">
-                    <time datetime="2021-06-15">15</time>
-                </button>
-                <button class="calendar-day calendar-weekday">
-                    <time datetime="2021-06-16">16</time>
-                </button>
-                <button class="calendar-day calendar-weekday">
-                    <time datetime="2021-06-17">17</time>
-                </button>
-                <button class="calendar-day calendar-weekday">
-                    <time datetime="2021-06-18">18</time>
-                </button>
-                <button class="calendar-day calendar-weekend">
-                    <time datetime="2021-06-19">19</time>
-                </button>
-                <button class="calendar-day calendar-weekend">
-                    <time datetime="2021-06-20">20</time>
-                </button>
-                <button class="calendar-day calendar-weekday">
-                    <time datetime="2021-06-21">21</time>
-                </button>
-
-                <button class="calendar-day calendar-weekday">
-                    <time datetime="2021-06-22">22</time>
-                </button>
-                <button class="calendar-day calendar-weekday">
-                    <time datetime="2021-06-23">23</time>
-                </button>
-                <button class="calendar-day calendar-weekday">
-                    <time datetime="2021-06-24">24</time>
-                </button>
-                <button class="calendar-day calendar-weekday">
-                    <time datetime="2021-06-25">25</time>
-                </button>
-                <button class="calendar-day calendar-weekend">
-                    <time datetime="2021-06-26">26</time>
-                </button>
-                <button class="calendar-day calendar-weekend">
-                    <time datetime="2021-06-27">27</time>
-                </button>
-                <button class="calendar-day calendar-weekday">
-                    <time datetime="2021-06-28">28</time>
-                </button>
-
-                <button class="calendar-day calendar-weekday">
-                    <time datetime="2021-06-29">29</time>
-                </button>
-                <button class="calendar-day calendar-weekday">
-                    <time datetime="2021-06-30">30</time>
-                </button>
-                <button class="calendar-day calendar-weekday inactive">
-                    <time datetime="2021-07-01">1</time>
-                </button>
-                <button class="calendar-day calendar-weekday inactive">
-                    <time datetime="2021-07-02">2</time>
-                </button>
-                <button class="calendar-day calendar-weekend inactive">
-                    <time datetime="2021-07-03">3</time>
-                </button>
-                <button class="calendar-day calendar-weekend inactive">
-                    <time datetime="2021-07-04">4</time>
-                </button>
-
-
+            <div id="calendar" class="calendar-grid june">
+                <!-- render calendardays -->
             </div>
         </div>
     </main>
