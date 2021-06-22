@@ -59,26 +59,14 @@ function renderCalender()
       daySquare.classList.add("calendar-weekday");
 
       for (todo of todos) {
-        //  console.log(todo.date.getDate());
-        // console.log("date of I:" + dateOfI);
-        // console.log("slice:" + todo.date.slice(-2));
+
         let daysDate = todo.date.slice(-2);
         let activeMonth = todo.date.slice(-5, -3);
         let activeYear = todo.date.slice(-10, -6);
         if (dateOfI == daysDate && (month+1)==activeMonth && year == activeYear){
           numberOfTodos += 1;
-        //   console.log("todosadded=" + numberOfTodos);
-        //   console.log("month"+month)
-        //   console.log("monthsplice:"+activeMonth)
-    //    console.log("year " + year)
-      //  console.log("yearSplice  " + activeYear)
-        }
 
-        // console.log(i);
-        // console.log(todo.date);
-        // if (sameDay(i.date, todo.date)) {
-        //     numberOfTodos += 1;
-        // }
+        }
       }
 
       if (numberOfTodos > 0) {
@@ -92,7 +80,6 @@ function renderCalender()
         daySquare.append(todoNumberContainer);
       }
 
-      //const eventsForDay
 
       if (i - inactiveDays === day && monthSelector === 0) {
               daySquare.id = 'currentDay';

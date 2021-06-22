@@ -104,28 +104,7 @@ function renderTodos() {
     todos.forEach(function(todo) {
         const todoItem = document.createElement('div')
         todoItem.className = 'accordion-item'
-        const todoContent =
-        `<h2 class="accordion-header" id="heading${todo.id}">
-            <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapse${todo.id}" aria-expanded="true" aria-controls="collapse${todo.id}">
-                ${todo.title}
-            </button>
-        </h2>
-        <div id="collapse${todo.id}" class="accordion-body-div  accordion-collapse collapse "  aria-labelledby="heading${todo.id}"
-        data-bs-parent="#accordion">
-            <div class="accordion-body d-flex flex-column">
-                <div class="todo-date-time-info my-3">${todo.date + ' ' + todo.starttime + " - " + todo.endtime}</div>
-                <div class="description">${todo.description}</div>
-                <!-- mobile buttons -->
-                <button class="btn edit-btn my-3 d-md-none ">Ändra</button>
-                <button class="btn remove-btn d-md-none">Ta Bort</button>
-                <!-- Desktop buttons -->
-                <div class="d-none d-md-flex justify-content-end" >
-                    <button class=" edit-icon-btn fa-2x"><i class="fas fa-edit"></i></button>
-                    <button onclick="deleteTodo(${todo.id})" class="delete-btn remove-icon-btn fa-2x"><i class="fas fa-trash-alt"></i></button>
-                </div>
-            </div>
-        </div>`;
+        const todoContent = createAccordionElements(todo);
         todoItem.innerHTML = todoContent
         accordionContainer.append(todoItem);
     });
@@ -135,4 +114,33 @@ function deleteTodo(id) {
     const index = todos.findIndex(todo => todo.id == id);
     todos.splice(index , 1);
     renderTodos();
+}
+
+/**
+ * 
+ * @param {todo} todo
+ * @returns 
+ */
+function createAccordionElements(todo){
+     return `<h2 class="accordion-header" id="heading${todo.id}">
+     <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
+         data-bs-target="#collapse${todo.id}" aria-expanded="true" aria-controls="collapse${todo.id}">
+         ${todo.title}
+     </button>
+ </h2>
+ <div id="collapse${todo.id}" class="accordion-body-div  accordion-collapse collapse "  aria-labelledby="heading${todo.id}"
+ data-bs-parent="#accordion">
+     <div class="accordion-body d-flex flex-column">
+         <div class="todo-date-time-info my-3">${todo.date + ' ' + todo.starttime + " - " + todo.endtime}</div>
+         <div class="description">${todo.description}</div>
+         <!-- mobile buttons -->
+         <button class="btn edit-btn my-3 d-md-none ">Ändra</button>
+         <button class="btn remove-btn d-md-none">Ta Bort</button>
+         <!-- Desktop buttons -->
+         <div class="d-none d-md-flex justify-content-end" >
+             <button class=" edit-icon-btn fa-2x"><i class="fas fa-edit"></i></button>
+             <button onclick="deleteTodo(${todo.id})" class="delete-btn remove-icon-btn fa-2x"><i class="fas fa-trash-alt"></i></button>
+         </div>
+     </div>
+ </div>`;
 }
