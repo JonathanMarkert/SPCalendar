@@ -1,3 +1,4 @@
+let isClicked = false;
 let monthSelector = 0;
 const weekdays = [
   "måndag",
@@ -26,6 +27,12 @@ async function renderCalender() {
   const firstDayOfTheMonth = new Date(year, month, 1);
   const numberOfDaysInMonth = new Date(year, month + 1, 0).getDate();
   const holidayArray = await getAllHolidaysForMonth(year, month);
+      
+      const formattedDay = day.toString().padStart(2, "0")
+      const thisMonth = month + 1;
+      formatMonth = thisMonth.toString().padStart(2, "0");
+   const dayString = `${year}-${formatMonth}-`;
+  //  console.log(dayString);
   const dateString = firstDayOfTheMonth.toLocaleDateString("sv-SE", {
     weekday: "long",
     year: "numeric",
@@ -43,22 +50,23 @@ async function renderCalender() {
 
   calendarContainer.innerHTML = "";
 
-  displayDays(inactiveDays, numberOfDaysInMonth, calendarContainer, year, month, day, holidayArray);
+  displayDays(inactiveDays, numberOfDaysInMonth, calendarContainer, year, month, day, holidayArray,dayString);
 
 }
 
-function displayDays(inactiveDays, numberOfDaysInMonth, calendarContainer, year, month, day, holidayArray) {
+function displayDays(inactiveDays, numberOfDaysInMonth, calendarContainer, year, month, day, holidayArray,dayString) {
   for (let i = 1; i <= inactiveDays + numberOfDaysInMonth; i++) {
-    
     const dateOfI = i - inactiveDays;
     const daySquare = document.createElement("button");
     let numberOfTodos = 0;
     let isHoliday = false;
     let holidayName ="";
     daySquare.classList.add("calendar-button");
-
-  
-
+    daySquare.setAttribute("id", dateOfI);
+    // Här är click-eventen
+    daySquare.addEventListener('click', () => checkIfSelected(dayString + `${dateOfI}`, daySquare));
+    
+    
     if (i > inactiveDays) {
       daySquare.innerText = i - inactiveDays;
 
@@ -67,10 +75,11 @@ function displayDays(inactiveDays, numberOfDaysInMonth, calendarContainer, year,
       for (todo of todos) 
       {
        
-        let daysDate = todo.date.slice(-2);
+        let todoDate = todo.date.slice(-2);
+        let thisDay = dateOfI;
         let activeMonth = todo.date.slice(-5, -3);
         let activeYear = todo.date.slice(-10, -6);
-        if (dateOfI == daysDate && (month + 1) == activeMonth && year == activeYear) {
+        if (thisDay == todoDate && (month + 1) == activeMonth && year == activeYear) {
           numberOfTodos += 1;
         }
         
@@ -92,8 +101,8 @@ function displayDays(inactiveDays, numberOfDaysInMonth, calendarContainer, year,
           isHoliday = true;
           holidayName = holiday.helgdag
         }
-      }      
-
+      }     
+      
       if (isHoliday) 
       {
           const p = document.createElement("div");
@@ -121,15 +130,11 @@ function displayDays(inactiveDays, numberOfDaysInMonth, calendarContainer, year,
 function initButtons() {
   document.getElementById("nextButton").addEventListener("click", () => {
     monthSelector++;
-    console.log(monthSelector);
-    
     renderCalender();
   });
 
   document.getElementById("backButton").addEventListener("click", () => {
     monthSelector--;
-    console.log(monthSelector);
-    
     renderCalender();
   });
 }
@@ -148,3 +153,17 @@ async function getAllHolidaysForMonth(year, month) {
   
   return holidayArray;
 }
+
+function checkIfSelected(date, daySquare) {
+  
+  renderSelectedDaysTodos(date);
+  const prevSelected = document.getElementsByClassName("selected-Todo")
+  
+  if (prevSelected) {
+    for (p of prevSelected) {
+      p.classList.remove("selected-Todo");
+    }
+  }
+    daySquare.classList.add("selected-Todo");
+}
+

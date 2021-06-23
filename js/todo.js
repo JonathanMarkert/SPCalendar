@@ -4,6 +4,7 @@ function initTodos() {
     loadTodos();
     addEventListeners();
     renderTodos();
+    
 }
 
 function addEventListeners() {
@@ -12,6 +13,9 @@ function addEventListeners() {
     
     const exitButton = document.querySelector('.exitButton');
     exitButton.addEventListener('click', closeCreateNewTodoForm);
+
+    const showAllTodosButton = document.getElementById('show-all-todos');
+    showAllTodosButton .addEventListener('click', showAllTodos);
 }
 
 function openTodoForm(todoItem) {
@@ -136,7 +140,8 @@ function createAccordionElements(todo){
 }
 
 function saveTodosToLocalStorage() {
-    localStorage.setItem('todos', JSON.stringify(todos));
+    const sortedTodos = sortTodos(todos)
+    localStorage.setItem('todos', JSON.stringify(sortedTodos));
     console.log(todo);
 }
 
@@ -147,6 +152,38 @@ function loadTodos() {
     }
 }
 
-function saveEditTodo() {
-    console.log('tryckt på save edit');
+// function saveEditTodo() {
+//     console.log('tryckt på save edit');
+// }
+
+
+
+function sortTodos(todos) {
+    const copiedTodoList = [...todos];
+    const sortedTodos = copiedTodoList.sort((a, b) => a.date < b.date ? -1 : 1);
+    return sortedTodos;
+}
+
+function renderSelectedDaysTodos(dayString) {
+console.log('du har kommit till renderSelectedDaysTodo');
+console.log(dayString);
+
+    const accordionContainer = document.querySelector('.todo-list .accordion');
+    accordionContainer.innerHTML = "";
+   
+    todos.forEach(function(todo) {
+        if (todo.date == dayString) {
+            
+            const todoItem = document.createElement('div')
+            todoItem.className = 'accordion-item'
+            const todoContent = createAccordionElements(todo);
+            todoItem.innerHTML = todoContent
+            accordionContainer.append(todoItem);
+        }
+    });
+}
+
+function showAllTodos() {
+    renderTodos();
+    renderCalender();
 }

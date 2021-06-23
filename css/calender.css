@@ -42,7 +42,6 @@
 }
 
 .calendar-weekday:nth-child(7n) {
-    background-color:var(--color-background-black);
     color: var(--color-orange);
 }
 
@@ -85,6 +84,10 @@
 
 .calendar-button:hover #icon {
     color: var(--color-purple);
+}
+
+.selected-Todo {
+    border: var(--color-green) solid 5px;
 }
 
 

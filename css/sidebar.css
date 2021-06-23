@@ -180,11 +180,11 @@ form {
     color: var(--color-green);
   }
 
-  /* textarea{
+  aside button.sort-on-date-button {
+    border: 0.5px solid var(--color-background-dark-grey);
+    color: var(--color-text-grey);
     
-    min-height: 20rem;
-    
-  } */
+  }
 }
 /* 
  */
