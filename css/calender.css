@@ -1,3 +1,4 @@
+
 .calendar {
     height: 100%;    
     justify-content: normal;
@@ -75,6 +76,27 @@
     bottom: 0.5rem;
     right: 0.5rem;
     color:var(--color-green);
+    text-shadow: none;
+}
+
+
+.calendar-weekday.holiday {
+    color: var(--color-orange);
+    background-color: var(--color-purple); 
+    /* box-shadow: 120px 80px 40px 20px rgb(211, 144, 58); */
+    
+  /* text-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 40px #0ff,
+    0 0 80px #0ff,
+    0 0 90px #0ff,
+    0 0 100px #0ff,
+    0 0 150px #0ff; */
+    /* text-shadow: 0 0 8px rgb(233, 83, 183) ; */
+    
+  
 }
 
 .calendar-button:hover #icon {

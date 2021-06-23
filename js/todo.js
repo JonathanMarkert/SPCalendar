@@ -11,7 +11,7 @@ const todos = [{
     }, {
         id: "2",
         title: "Gå ut med hunden", 
-        date: "2021-06-02", 
+        date: "2021-06-06", 
         starttime: "16:30", 
         endtime: "17:27", 
         description: "lång promenad"
