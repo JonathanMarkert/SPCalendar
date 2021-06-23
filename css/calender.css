@@ -75,7 +75,10 @@
 .calendar-weekday.holiday div.holiday-text {
     
     font-size: 50%;
-    position: relative;      
+    position: absolute;
+    width:100%;    
+    word-wrap: break-word;   
+   
     overflow-inline: clip;
 
 }
