@@ -129,7 +129,7 @@ function createAccordionElements(todo){
          <div class="description">${todo.description}</div>
          <!-- mobile buttons -->
          <button onclick="editTodo('${todo.id}')" class="btn edit-btn my-3 d-md-none ">Ändra</button>
-         <button onclick="deleteTodo(${todo.id})" class="btn remove-btn d-md-none">Ta Bort</button>
+         <button onclick="deleteTodo('${todo.id}')" class="btn remove-btn d-md-none">Ta Bort</button>
          <!-- Desktop buttons -->
          <div class="d-none d-md-flex justify-content-end" >
              <button onclick="editTodo('${todo.id}')" class=" edit-icon-btn fa-2x"><i class="fas fa-edit"></i></button>
