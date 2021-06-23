@@ -54,6 +54,7 @@ function displayDays(inactiveDays, numberOfDaysInMonth, calendarContainer, year,
     const daySquare = document.createElement("button");
     let numberOfTodos = 0;
     let isHoliday = false;
+    let holidayName ="";
     daySquare.classList.add("calendar-button");
 
   
@@ -89,12 +90,18 @@ function displayDays(inactiveDays, numberOfDaysInMonth, calendarContainer, year,
         
         if (dateOfI == daysDate && (month + 1) == activeMonth && year == activeYear) {
           isHoliday = true;
-       
+          holidayName = holiday.helgdag
         }
       }      
 
-      if (isHoliday) {
+      if (isHoliday) 
+      {
+          const p = document.createElement("div");
+          const textNode =document.createTextNode(holidayName);
+          p.appendChild(textNode);
           daySquare.classList.add("holiday");
+          p.classList.add("holiday-text")
+          daySquare.appendChild(p);
       }
 
 
