@@ -8,7 +8,7 @@ function initTodos() {
 
 function addEventListeners() {
     const createButton = document.querySelector('.createButton');
-    createButton.addEventListener('click', openTodoForm);
+    createButton.addEventListener('click', () => openTodoForm());
     
     const exitButton = document.querySelector('.exitButton');
     exitButton.addEventListener('click', closeCreateNewTodoForm);
@@ -48,7 +48,6 @@ function handleSubmitTodo(event, todoItem) {
     const starttime = document.getElementById('starttime').value;
     const endtime = document.getElementById('endtime').value;
     const description = document.getElementById('todo-description').value;
-    
     const todoData = { title, date, starttime, endtime, description }
     if (todoItem) {
         Object.assign(todoItem, todoData);
@@ -125,7 +124,7 @@ function createAccordionElements(todo){
          <div class="todo-date-time-info my-3">${todo.date + ' ' + todo.starttime + " - " + todo.endtime}</div>
          <div class="description">${todo.description}</div>
          <!-- mobile buttons -->
-         <button class="btn edit-btn my-3 d-md-none ">Ändra</button>
+         <button onclick="editTodo('${todo.id}')" class="btn edit-btn my-3 d-md-none ">Ändra</button>
          <button onclick="deleteTodo(${todo.id})" class="btn remove-btn d-md-none">Ta Bort</button>
          <!-- Desktop buttons -->
          <div class="d-none d-md-flex justify-content-end" >
