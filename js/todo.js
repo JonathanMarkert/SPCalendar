@@ -1,45 +1,11 @@
 // const todos = [];
 
 // för att kunna rendera något
-const todos = [{
-        id: "1",
-        title: "Städa", 
-        date: "2021-06-01", 
-        starttime: "13:30", 
-        endtime: "15:27", 
-        description: "noga under sängen"
-    }, {
-        id: "2",
-        title: "Gå ut med hunden", 
-        date: "2021-06-02", 
-        starttime: "16:30", 
-        endtime: "17:27", 
-        description: "lång promenad"
-    }, {
-        id: "3",
-        title: "Gå ut med kattskrället", 
-        date: "2021-06-10", 
-        starttime: "14:30", 
-        endtime: "14:33", 
-        description: "kort promenad"
-    }, {
-        id: "4",
-        title: "Gå ut med kattskrället", 
-        date: "2021-06-10", 
-        starttime: "14:30", 
-        endtime: "14:33", 
-        description: "kort promenad"
-    }, {
-        id: "5",
-        title: "Städa under sängen", 
-        date: "2021-07-10", 
-        starttime: "14:30", 
-        endtime: "14:33", 
-        description: "noga!!!"
-    }]
+let todos = []
 
 
 function initTodos() {
+    loadTodos();
     addEventListeners();
     renderTodos();
 }
@@ -82,10 +48,11 @@ function handleSubmit(event) {
     const todoDescription = document.getElementById('todo-description').value;
     todo = { id: todoId, title: todoTitle, date: todoDate, starttime: todoStarttime, endtime: todoEndtime, description: todoDescription }
     todos.push(todo);
-    console.log(todo);
     document.querySelector('form').reset();
 
+    saveTodosToLocalStorage();
     closeCreateNewTodoForm();
+    loadTodos();
     renderTodos();
     renderCalender();
 }
@@ -93,10 +60,10 @@ function handleSubmit(event) {
 // hittade en guid funktion på stackoverflow https://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid
 function uuidv4() {
     return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
-      (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
-    );
-  }
-
+        (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+        );
+    }
+    
 // renderar todo när todo är hårdkodad
 function renderTodos() {
     const accordionContainer = document.querySelector('.todo-list .accordion');
@@ -111,8 +78,10 @@ function renderTodos() {
 }
 
 function deleteTodo(id) {
+    console.log(id);
     const index = todos.findIndex(todo => todo.id == id);
-    todos.splice(index , 1);
+    todos.splice(index, 1);
+    saveTodosToLocalStorage();
     renderTodos();
     renderCalender();
 }
@@ -140,8 +109,20 @@ function createAccordionElements(todo){
          <!-- Desktop buttons -->
          <div class="d-none d-md-flex justify-content-end" >
              <button class=" edit-icon-btn fa-2x"><i class="fas fa-edit"></i></button>
-             <button onclick="deleteTodo(${todo.id})" class="delete-btn remove-icon-btn fa-2x"><i class="fas fa-trash-alt"></i></button>
+             <button onclick="deleteTodo('${todo.id}')" class="delete-btn remove-icon-btn fa-2x"><i class="fas fa-trash-alt"></i></button>
          </div>
      </div>
  </div>`;
+}
+
+function saveTodosToLocalStorage() {
+    localStorage.setItem('todos', JSON.stringify(todos));
+    console.log(todo);
+}
+
+function loadTodos() {
+    if (localStorage.todos) {
+        const localTodos = localStorage.getItem('todos');
+        todos = JSON.parse(localTodos);
+    }
 }
