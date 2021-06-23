@@ -6,11 +6,11 @@ function initTodos() {
 
 function addEventListeners() {
     const createButton = document.querySelector('.createButton');
-    createButton.addEventListener('click', openCreateNewTodoForm);
+    createButton.addEventListener('click', openTodoForm);
 }
 
 
-function openCreateNewTodoForm() {
+function openTodoForm() {
     console.log("click!")
     
     // gömma en div och visa en annan ? 
