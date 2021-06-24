@@ -3,8 +3,7 @@ let todos = []
 function initTodos() {
     loadTodos();
     addEventListeners();
-    renderTodos();
-    
+    renderTodos();    
 }
 
 function addEventListeners() {
@@ -33,7 +32,7 @@ function openTodoForm(todoItem) {
         document.getElementById('todo-description').value = todoItem.description;
     }
     
-    const submitButton = document.getElementById('save-btn');
+    const submitButton = document.getElementById('saveButton');
     submitButton.onclick = (e) => handleSubmitTodo(e, todoItem);
 }
 
@@ -55,7 +54,6 @@ function handleSubmitTodo(event, todoItem) {
     const todoData = { title, date, starttime, endtime, description }
     if (todoItem) {
         Object.assign(todoItem, todoData);
-        console.log(todoItem);
     } else {
         const todoId = uuidv4();
         todo = { id: todoId, ...todoData }
@@ -69,8 +67,6 @@ function handleSubmitTodo(event, todoItem) {
     renderTodos();
     renderCalender();
 }
-
-
 
 // hittade en guid funktion på stackoverflow https://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid
 function uuidv4() {
@@ -105,8 +101,6 @@ function deleteTodo(id) {
  */
 function editTodo(id) {
     const todoToEdit = todos.find(todo => todo.id == id);
-    console.log(todoToEdit);
-
     openTodoForm(todoToEdit);
 }
 
@@ -117,32 +111,32 @@ function editTodo(id) {
  */
 function createAccordionElements(todo){
      return `<h2 class="accordion-header" id="heading${todo.id}">
-     <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
-         data-bs-target="#collapse${todo.id}" aria-expanded="true" aria-controls="collapse${todo.id}">
-         ${todo.title}
-     </button>
- </h2>
- <div id="collapse${todo.id}" class="accordion-body-div  accordion-collapse collapse "  aria-labelledby="heading${todo.id}"
- data-bs-parent="#accordion">
-     <div class="accordion-body d-flex flex-column">
-         <div class="todo-date-time-info my-3">${todo.date + ' ' + todo.starttime + " - " + todo.endtime}</div>
-         <div class="description">${todo.description}</div>
-         <!-- mobile buttons -->
-         <button onclick="editTodo('${todo.id}')" class="btn edit-btn my-3 d-md-none ">Ändra</button>
-         <button onclick="deleteTodo('${todo.id}')" class="btn remove-btn d-md-none">Ta Bort</button>
-         <!-- Desktop buttons -->
-         <div class="d-none d-md-flex justify-content-end" >
-             <button onclick="editTodo('${todo.id}')" class=" edit-icon-btn fa-2x"><i class="fas fa-edit"></i></button>
-             <button onclick="deleteTodo('${todo.id}')" class="delete-btn remove-icon-btn fa-2x"><i class="fas fa-trash-alt"></i></button>
-         </div>
-     </div>
- </div>`;
+                <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse${todo.id}" aria-expanded="true" aria-controls="collapse${todo.id}">
+                    ${todo.title}
+                </button>
+            </h2>
+            <div id="collapse${todo.id}" class="accordion-body-div  accordion-collapse collapse "  aria-labelledby="heading${todo.id}"
+            data-bs-parent="#accordion">
+                <div class="accordion-body d-flex flex-column">
+                    <div class="todo-date-time-info my-3">${todo.date + ' ' + todo.starttime + " - " + todo.endtime}</div>
+                    <div class="description">${todo.description}</div>
+                    <!-- mobile buttons -->
+                    <button onclick="editTodo('${todo.id}')" class="btn edit-btn my-3 d-md-none ">Ändra</button>
+                    <button onclick="deleteTodo('${todo.id}')" class="btn remove-btn d-md-none">Ta Bort</button>
+                    <!-- Desktop buttons -->
+                    <div class="d-none d-md-flex justify-content-end" >
+                        <button onclick="editTodo('${todo.id}')" class=" edit-icon-btn fa-2x"><i class="fas fa-edit"></i></button>
+                        <button onclick="deleteTodo('${todo.id}')" class="delete-btn remove-icon-btn fa-2x"><i class="fas fa-trash-alt"></i></button>
+                    </div>
+                </div>
+            </div>`;
 }
 
 function saveTodosToLocalStorage() {
     const sortedTodos = sortTodos(todos)
     localStorage.setItem('todos', JSON.stringify(sortedTodos));
-    console.log(todo);
+    
 }
 
 function loadTodos() {
@@ -152,12 +146,6 @@ function loadTodos() {
     }
 }
 
-// function saveEditTodo() {
-//     console.log('tryckt på save edit');
-// }
-
-
-
 function sortTodos(todos) {
     const copiedTodoList = [...todos];
     const sortedTodos = copiedTodoList.sort((a, b) => a.date < b.date ? -1 : 1);
@@ -165,9 +153,6 @@ function sortTodos(todos) {
 }
 
 function renderSelectedDaysTodos(dayString) {
-console.log('du har kommit till renderSelectedDaysTodo');
-console.log(dayString);
-
     const accordionContainer = document.querySelector('.todo-list .accordion');
     accordionContainer.innerHTML = "";
    

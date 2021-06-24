@@ -75,22 +75,22 @@
     <main class="d-flex">
         <!-- ASIDE NAV -->
         <aside class="col-12 col-md-3 d-flex">
-            <div id="sidebar-wrapper" class="sidebar-wrapper sidebar d-flex flex-column col-12">
+            <div id="sidebar-wrapper" class="sidebar-wrapper sidebar-styling d-flex flex-column col-12">
                 <div  class="d-flex today-info">
                     <div class = "col-md-4 d-none d-lg-flex align-items-center grey-invader-side">
                        <img src="./img/space-invaders.png" alt="">
                     </div>
-                    <div id="today"  class="col-12 d-flex flex-column align-items-center justify-content-center col-lg-8" >
+                    <div id="today" class="col-12 d-flex flex-column align-items-center justify-content-center col-lg-8" >
                         <!-- renderTodayInfo -->
                     </div>
                 </div>
                 <div class="todo-list">
                     <div class="accordion" id="accordion">
-                        <!-- renderar ut todos -->
+                        <!-- render todos -->
                     </div>
                 </div>
     
-                <button id="show-all-todos" class=" d-flex align-items-center justify-content-center sort-on-date-button">
+                <button id="show-all-todos" class=" d-flex align-items-center justify-content-center show-all-todos-button">
                     <p>Visa alla Todos</p>
                 </button>
                 <div class="createButton col-12 col-md-4 col-lg-2 d-flex align-items-center justify-content-center  create-todo-container ">
@@ -98,21 +98,21 @@
                 </div>
             </div>
 
-            <div id="sidebar-todo-form" class="sidebar-todo-form d-none sidebar col-12">
-                <form class="d-flex flex-column" action="">
-                    <div class="">
+            <div id="sidebar-todo-form" class="sidebar-todo-form d-none sidebar-styling col-12">
+                <form class="d-flex flex-column">
+                    <div>
                         <label for="todo-name">Titel</label>
                         <input type="text" name="todo-name" id="todo-name" placeholder="Titel">
                     </div>
-                    <div class="">
+                    <div>
                         <label for="date">Datum</label>
                         <input type="date" name="date" id="date" placeholder="Datum">
                     </div>
-                    <div class="">
+                    <div>
                         <label for="starttime">Starttid</label>
                         <input type="Time" name="starttime" id="starttime" placeholder="Starttid">
                     </div>
-                    <div class="">
+                    <div>
                         <label for="endtime">Sluttid</label>
                         <input type="time" name="endtime" id="endtime" placeholder="Sluttid">
                     </div>
@@ -120,8 +120,8 @@
                         <label for="todo-description">Beskrivning</label>
                         <textarea  class="flex-fill" name="todo-description" id="todo-description" placeholder="Beskrivning"></textarea>
                     </div>
-                    <div class=" d-flex flex-column">
-                        <button id="save-btn" class="btn edit-btn my-3">Spara</button>
+                    <div class="d-flex flex-column">
+                        <button id="saveButton" class="btn edit-btn my-3">Spara</button>
                         <button class="exitButton btn remove-btn mb-3">Avbryt</button>
                     </div>
                 </form>
@@ -131,7 +131,7 @@
         <!-- Main Calendar -->
         <div class="calendar d-none d-md-block col-md-9 ">
             <!-- hide whole section in mobile version -->
-            <div id="calendar" class="calendar-grid june">
+            <div id="calendar" class="calendar-grid">
                 <!-- render calendardays -->
             </div>
         </div>

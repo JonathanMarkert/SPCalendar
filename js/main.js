@@ -1,7 +1,6 @@
 window.addEventListener('load', main);
 
 function main(){
-
     initTodos();
     initCalender();
     initToday();

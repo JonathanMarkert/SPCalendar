@@ -2,12 +2,24 @@ aside {
   height: 100%;
 }
 
-.today-info {
-  /* border-top: 3px solid var(--color-background-grey);
-  border-bottom: 3px solid var(--color-background-grey);
-  border-left: 3px solid var(--color-background-grey); */
+.sidebar-styling {
+  background-color: var(--color-background-black);
+  color: var(--color-text-grey);
   border: 1px solid var(--color-background-grey);
 }
+
+/* ------------
+    today info
+  -------------*/
+
+.today-info {
+  border: 1px solid var(--color-background-grey);
+}
+
+aside div.today-info {
+  flex: 2;
+}
+
 .grey-invader-side > img {
   width: 90%;
   padding-left: 1rem;
@@ -19,30 +31,20 @@ aside {
   justify-content: center;
 }
 
-.sidebar {
-  /* display: flex;
-  flex-direction: column; */
-  background-color: var(--color-background-black);
-  color: var(--color-text-grey);
-  border: 1px solid var(--color-background-grey);
-}
-
+/* ------------
+    todo list
+  -------------*/
 .todo-list {
   border-bottom: 1px solid var(--color-background-grey);
 }
 
-aside div.today-info {
-  flex: 2;
-}
-
 aside div.todo-list {
   flex: 7;
-
   overflow-y: auto;
   font-family: "Courier New", Courier, monospace;
 }
 
-aside button.sort-on-date-button {
+aside button.show-all-todos-button {
   flex: 1;
   border: 1px solid var(--color-background-dark-grey);
   background-color: var(--color-background-black);
@@ -75,6 +77,14 @@ aside div.create-todo-container {
   border: 1px solid var(--color-background-grey);
 }
 
+.accordion-item:not(.collapsed):last-child {
+  border-bottom: 1px solid var(--color-background-grey);
+}
+
+/* ------------
+    Buttons
+  -------------*/
+
 .accordion-button {
   background-color: var(--color-background-grey);
   font-weight: 800;
@@ -84,10 +94,6 @@ aside div.create-todo-container {
   background-color: var(--color-purple);
   color: var(--color-text-grey);
   font-weight: 800;
-}
-
-.accordion-item:not(.collapsed):last-child {
-  border-bottom: 1px solid var(--color-background-grey);
 }
 
 .accordion-button:focus {
@@ -124,7 +130,6 @@ aside div.create-todo-container {
   color: var(--color-green);
   border: none;
   padding-right: 0.5rem;
-  
 }
 
 .edit-icon-btn:hover {
@@ -148,16 +153,18 @@ aside div.create-todo-container {
   transform: scale(1.5);
 }
 
-textarea{
+/* ------------
+    Form
+  -------------*/
+
+textarea {
   box-sizing: border-box;
   width: 100%;
   height: 100%;  
   padding: 0.25rem;
-  /* font-family: 'Courier New', Courier, monospace; */
 }
 
-input{
-  
+input {
   box-sizing: border-box;
   width: 100%;
   padding: 0.25rem;
@@ -169,8 +176,10 @@ form {
   font-family: 'Courier New', Courier, monospace;
 }
 
+/* ------------
+    MediaQuery
+  -------------*/
 
-/* Lägg till todo knapp i desktop läge */
 @media (min-width: 768px) {
   aside div.create-todo-container {
     background-color: var(--color-black);
@@ -180,11 +189,8 @@ form {
     color: var(--color-green);
   }
 
-  aside button.sort-on-date-button {
+  aside button.show-all-todos-button {
     border: 0.5px solid var(--color-background-dark-grey);
     color: var(--color-text-grey);
-    
   }
 }
-/* 
- */
