@@ -1,4 +1,5 @@
 # SPCalendar
+Av: Daniel Sundin, Johanna Skinnari, Jonathan Markert, Thomas Ljungdahl
 
 Ärendelista
 1. Skapa layouten enligt skiss (dölj kalender på mobilvy) - (G)
@@ -17,11 +18,11 @@ antal todos på en viss dag. - (G)
 12. Filtrera todolistan utifrån vald dag i kalendern, det ska gå avmarkera vald dag (VG)
 
 
-## Miro-länk
+## Miro-länk för Wireframes
 https://miro.com/welcomeonboard/N1Y2eWVBQTZQRHVIYVlkb3BWTGJycDNFOE9CMGdRcGFMVFd0ejhlc3p3WUhmRXBITDZ2QkNpUWlXMVFNN1cyMnwzMDc0NDU3MzUzNzAwNTAwMzc4
 
-## Font Awesome länkar:
-<i class="fas fa-plus"></i>  plus-tecken
-<i class="fas fa-calendar"></i> Kalender image
-<i class="fas fa-trash-alt"></i> trash-can icon
-<i class="fas fa-edit"></i> Edit icon 
+## Github
+https://github.com/JonathanMarkert/SPCalendar
+
+## Git-commits och pushes
+Då vi suttit mycket med live-shaer så har vi försökt kommentera in i commit-namnet initialerna på de som vart med och och arbetat på commiten. I vissa fall kan detta kan ha missats, i sådana fall har vi försökt lägga kommentarer, på vilka som varit delaktiga, i berörda issues.

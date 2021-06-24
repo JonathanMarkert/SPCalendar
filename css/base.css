@@ -11,14 +11,7 @@
     --header-height: 4rem;
 } 
 
-/* xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1400px */
-
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -35,13 +28,14 @@ body {
     background-color: var(--color-background-black);
 }
 
-main {
-    /* display: flex; */
+main {    
     width: 100%;
-    height: calc(100vh - (var(--header-height)));
-    /* background-color: palegreen; */
+    height: calc(100vh - (var(--header-height)));    
 }
 
+/* ------------
+    MediaQuery
+  -------------*/
 
 @media (min-width: 768px) {
     main {
